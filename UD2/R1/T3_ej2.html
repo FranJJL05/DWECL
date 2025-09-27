@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        let cumple = new Date(prompt("Introduce tu cumpleanos en el formato YYYY-MM-DD"));
+
+        let mes = cumple.getMonth();
+        let dia = cumple.getDay();
+        let añoInicio = cumple.getFullYear();
+        let añoFin = 2100;
+
+
+        for (let año = añoInicio;  año <= añoFin; año++) {
+            let fecha = new Date(año, mes, dia);
+            if (fecha.getDay() === 1) {
+                document.write(`${año}: Domingo </br>`)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+
+<body>
+    <script>
+    var respuesta = "";
+    var nombreCorrecto = "adolfo";
+    var apellidoCorrecto = "suarez";
+    var mensaje = "¿Cuál fue el primer presidente de la democracia española?";
+
+    while (true) {
+        respuesta = prompt(mensaje);
+
+        if (respuesta === null) {
+            // Si el usuario cancela el prompt
+            alert("Operación cancelada.");
+            break;
+        }
+
+        var limpia = respuesta.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+        var palabras = limpia.split(/\s+/);
+
+        if (palabras.length >= 2) {
+            if (palabras.includes(nombreCorrecto) && palabras.includes(apellidoCorrecto)) {
+                break;
+            } else if (palabras.includes(nombreCorrecto)) {
+                mensaje = "Te falta el apellido. ¿Cuál fue el primer presidente de la democracia española?";
+            } else if (palabras.includes(apellidoCorrecto)) {
+                mensaje = "Te falta el nombre. ¿Cuál fue el primer presidente de la democracia española?";
+            } else {
+                mensaje = "ERROR. Inténtelo de nuevo. ¿Cuál fue el primer presidente de la democracia española?";
+            }
+        } else if (palabras.length === 1) {
+            if (palabras[0] === nombreCorrecto) {
+                mensaje = "Te falta el apellido. ¿Cuál fue el primer presidente de la democracia española?";
+            } else if (palabras[0] === apellidoCorrecto) {
+                mensaje = "Te falta el nombre. ¿Cuál fue el primer presidente de la democracia española?";
+            } else {
+                mensaje = "ERROR. Inténtelo de nuevo. ¿Cuál fue el primer presidente de la democracia española?";
+            }
+        } else {
+            mensaje = "ERROR. Inténtelo de nuevo. ¿Cuál fue el primer presidente de la democracia española?";
+        }
+    }
+
+    if (respuesta !== null) {
+        document.write("<h1>Bienvenido a la página</h1>");
+    }
+</script>
+
+</body>
+
+</html>

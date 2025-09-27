@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        function divisibleEntre(num1, num2) {
+            let resultado;
+            if (num1 % num2 == 0) {
+                resultado = "Si son divisibles"
+            }else{
+                resultado = "No son dividibles"
+            }
+            return "El número " + num1 + " y el número " + num2 + ": "+ resultado;
+        }
+        document.write(divisibleEntre(4,2))
+    </script>
+</body>
+</html>

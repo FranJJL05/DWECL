@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <script>
+        let num_filas = prompt("Ingresa el número de filas");
+        let num_columnas = prompt("Ingresa el número de columnas");
+        let alto = prompt("Ingresa la altura de las celdas (en píxeles)");
+        let ancho = prompt("Ingresa el ancho de las celdas (en píxeles)");
+
+        num_filas = parseInt(num_filas);
+        num_columnas = parseInt(num_columnas);
+        alto = parseInt(alto);
+        ancho = parseInt(ancho);
+
+        if (isNaN(num_filas) || isNaN(num_columnas) || isNaN(alto) || isNaN(ancho) || num_filas <= 0 || num_columnas <= 0 || alto <= 0 || ancho <= 0) {
+            document.write("<h2>Por favor, ingresa valores numéricos y mayores a cero.</h2>");
+        } else {
+            document.write('<table border="1" style="border-collapse: collapse;">');
+
+            for (let i = 0; i < num_filas; i++) {
+                document.write('<tr>');
+
+                for (let j = 0; j < num_columnas; j++) {
+                    document.write('<td style="height: ' + alto + 'px; width: ' + ancho + 'px;">&nbsp;</td>');
+                }
+
+                document.write('</tr>');
+            }
+
+            document.write('</table>');
+        }
+    </script>
+</body>
+
+</html>

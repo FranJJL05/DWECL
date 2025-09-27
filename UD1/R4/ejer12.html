@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <script>
+        function precioFinal(precioProducto, descuento) {
+            let desCuentoTotal = (precioProducto * descuento) / 100;
+            return precioProducto - desCuentoTotal;
+        }
+
+        let precioProducto = prompt("Introduce el precio del producto");
+        let descuento = prompt("Introduce el descuento a aplicar en %");
+        let total = precioFinal(precioProducto, descuento);
+
+        document.write(`El precio final es de ${total}`)
+    </script>
+</body>
+</html>

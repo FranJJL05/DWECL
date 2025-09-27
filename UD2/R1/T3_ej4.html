@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        let fechaAntes = new Date();
+        let segundosAntes = fechaAntes.getSeconds();
+
+        let nombre = prompt("Introduce el nombre")
+
+        let fechaAhora = new Date();
+        let segundosAhora = fechaAhora.getSeconds();
+
+        let tiempoFinal = segundosAhora - segundosAntes;
+        
+
+        let fechaAntes1 = new Date();
+        let segundosAntes1 = fechaAntes1.getSeconds();
+
+        let apellido = prompt("Introduce los apellidos")
+
+        let fechaAhora1 = new Date();
+        let segundosAhora1 = fechaAhora1.getSeconds();
+
+        let tiempoFinal1 = segundosAhora1 - segundosAntes1;
+
+        let resultado = tiempoFinal + tiempoFinal1;
+
+        document.write(`En introducir ${nombre} ${apellido} has tardado ${resultado} segundos`)
+
+    </script>
+</body>
+</html>

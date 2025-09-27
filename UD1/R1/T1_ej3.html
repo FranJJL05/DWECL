@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Clasificación de Edad Deportiva</h1>
+    <p>Introduce una edad para conocer la categoría:</p>
+
+    <!-- Campo de entrada para la edad -->
+    <input type="number" id="edad" placeholder="Introduce tu edad">
+
+    <!-- Botón para ejecutar la función -->
+    <button onclick="clasificarEdad()">Mostrar categoría</button>
+
+    <!-- Área donde se mostrará el resultado -->
+    <p id="resultado"></p>
+
+    <script>
+        function clasificarEdad() {
+
+            let edad = parseInt(document.getElementById("edad").value);
+
+            let mensaje = "";
+
+            if (edad > 18) {
+            mensaje = "Absoluto";
+            } else if (edad >= 16) {
+            mensaje = "Juvenil";
+            } else if (edad >= 14) {
+            mensaje = "Cadete";
+            } else if (edad >= 12) {
+            mensaje = "Infantil";
+            } else if (edad >= 10) {
+            mensaje = "Alevín";
+            } else if (edad >= 8) {
+            mensaje = "Benjamín";
+            } else {
+            mensaje = "Edad insuficiente para clasificar. Menor de 8 años.";
+            }
+            document.getElementById("resultado").innerText = mensaje;
+        }
+    </script>
+</body>
+</html>

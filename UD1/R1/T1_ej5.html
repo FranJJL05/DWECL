@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        var countdown = prompt("Introduce un número para iniciar la cuenta atrás");
+        while (countdown > 0) {
+            alert(countdown + "... ");
+            countdown++;
+        }
+    </script>
+</body>
+<!-- Ahora el número aumenta en cada iteración.
+
+Como la condición del bucle es while (countdown > 0), nunca se rompe si el número inicial es positivo, porque estás sumando.
+
+Resultado: bucle infinito si introduces un número mayor que 0 (ejemplo: 3).
+
+Mostrará alertas como: 3..., 4..., 5..., etc., sin parar.-->
+</html>

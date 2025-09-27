@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        let opcion = prompt("Introduce una opción \n 1.Potencia\n 2.Raíz\n 3.Redondeo\n 4.Trigonometría")
+        opcion = parseInt(opcion);
+
+        switch (opcion) {
+            case 1:1
+                let base = prompt("Introduce la base");
+                let exponente = prompt("Introduce el exponente")
+                let resultado = Math.pow(base, exponente);
+                document.write(`La potencia de ${base} elevado a ${exponente} es: ${resultado}`)
+                break;
+            case 2:
+                let num = prompt("Introduce un numero");
+                num = Math.abs(num);
+                let resultadoRaiz = Math.sqrt(num);
+                document.write(`La raíz de ${num} es: ${resultadoRaiz}`)
+                break;
+            case 3:
+                let decimal = prompt("Introduce un número decimal")
+                decimal = Math.round(decimal);
+                document.write(`El número redondeando sería ${decimal}`)
+                break;
+            case 4:
+                let angulo = prompt("Introduce un ángulo")
+                let seno = Math.sin(angulo);
+                let coseno = Math.cos(angulo);
+                let tangente = Math.tan(angulo);
+                document.write(`Valores trigonométricos de ${angulo}: Seno = ${seno}, Coseno = ${coseno}, Tangente = ${tangente}`)
+                break;
+            default:
+                break;
+        }1
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+<body>
+    <script>
+        function divisible(num1, num2) {
+            if (num1 % num2 === 0) {
+                return "si"
+            }else{
+                return "no"
+            }
+        }
+
+        let dividendo = prompt("Introduce el dividendo");
+        let divisor = prompt("Introduce un divisor > 0");
+        let resultado = divisible(dividendo, divisor);
+
+        document.write(`${dividendo} ${resultado} es divisible por ${divisor}`)
+    </script>
+</body>
+</html>

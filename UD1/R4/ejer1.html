@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        function sum(...valores) {
+            let suma = 0;
+            for (let i = 0; i < valores.length; i++) {
+                suma += valores[i];
+            }
+            return suma;
+        }
+        document.writeln("La suma de los valores es: " + sum(1, 2, 3));
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+
+<body>
+    
+<script>
+    let tamano = prompt("Ingresa el tamaño de la celda (el ancho será igual al alto):");
+    
+    tamano = parseInt(tamano);
+
+    document.write('<table border="0">');
+
+    for (let i = 0; i < 8; i++) {
+        document.write('<tr>');
+        
+        for (let j = 0; j < 8; j++) {
+            let color;
+            if ((i + j) % 2 === 0) {
+                color = 'black';
+            } else {
+                color = 'white';
+            }
+            
+            document.write('<td style="background-color:' + color + '; width:' + tamano + 'px; height:' + tamano + 'px;"></td>');
+        }
+        
+        document.write('</tr>');
+    }
+    
+    document.write('</table>');
+</script>
+
+</body>
+
+</html>

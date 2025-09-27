@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+
+<body>
+    <script>
+        function factorial(num) {
+            if (num < 0) {
+                return "No se puede calcular el factorial de un número negativo";
+            }
+
+            let resultado = 1;
+            for (let i = 2; i <= num; i++) {
+                resultado *= i;
+            }
+
+            return resultado;
+        }
+
+        let num = prompt("Introduce un numero entero para calcular su factorial")
+        let resultado = factorial(num);
+
+        document.write(`El factorial de ${num} es ${resultado}`)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        function addOnlyNums(...args) {
+            let resultado = 0;
+            for (let i = 0; i < args.length; i++) {
+                if (!isNaN(args[i])) {
+                    resultado += args[i];
+                }
+            }
+            return resultado
+        }
+
+        document.writeln("La suma de los argumentos es de: " + addOnlyNums(1, "cat", 3, 4))
+    </script>
+</body>
+
+</html>

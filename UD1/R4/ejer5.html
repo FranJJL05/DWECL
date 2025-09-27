@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        function sumEveryOther(...valores) {
+            let suma = 0;
+            for (let i = 0; i < valores.length; i++) {
+                suma += valores[i];
+            }
+            return suma;
+        }
+        document.writeln("La suma de los valores es: " + sumEveryOther(5,6,3,4,1));
+    </script>
+</body>
+
+</html>

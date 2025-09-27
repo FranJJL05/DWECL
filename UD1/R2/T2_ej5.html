@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        let numeroSecreto = parseInt(prompt("Jugador 1, introduce el número secreto:"));
+
+        // Validar que el número introducido sea un número y no esté vacío
+        while (isNaN(numeroSecreto) || numeroSecreto === null) {
+            numeroSecreto = parseInt(prompt("Por favor, introduce un número válido."));
+        }
+
+        let intentoJugador2;
+        let intentos = 0;
+
+        // Bucle para que el jugador 2 adivine el número
+        while (intentoJugador2 !== numeroSecreto) {
+            // Solicitar el intento al jugador 2
+            intentoJugador2 = parseInt(prompt("Jugador 2, adivina el número:"));
+
+            intentos++;
+
+            if (intentoJugador2 > numeroSecreto) {
+                alert("¡Incorrecto! Tu número es mayor que el número a adivinar.");
+            } else if (intentoJugador2 < numeroSecreto) {
+                alert("¡Incorrecto! Tu número es menor que el número a adivinar.");
+            }
+        }
+
+        alert(`Has adivinado el número ${numeroSecreto} en ${intentos} intentos.`);
+    </script>
+</body>
+
+</html>

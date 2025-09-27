@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        let nombreCompleto = prompt("Introduce tu nombre y apellidos")
+
+        document.write(`El tamaño del nombre completo es de ${nombreCompleto.length} caracteres </br></br>`)
+        
+        nombreMayuscula = nombreCompleto.toUpperCase();
+        nombreMinuscula = nombreCompleto.toLowerCase();
+        document.write(`La cadena en minuscula sería: ${nombreMinuscula} </br></br>`)
+        document.write(`La cadena en mayúscula sería: ${nombreMayuscula} </br></br>`)
+
+        let partes = nombreCompleto.split(" ");
+        let nombre = partes[0];
+        let primerApellido = partes[1];
+        let segundoApellido = partes[2];
+
+        document.write(`Nombre: ${nombre} </br>`);
+        document.write(`Apellido 1: ${primerApellido} </br>`)
+        document.write(`Apellido 2: ${segundoApellido} </br>`)
+
+    </script>
+</body>
+</html>

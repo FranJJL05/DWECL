@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        let hoy = new Date();
+        let añoActual = hoy.getFullYear();
+        let navidad = new Date(añoActual, 11, 19);
+
+        let diferenciaMs = navidad - hoy;
+        let msDia = 86400000;
+        let dias = Math.floor(diferenciaMs / msDia);
+
+        document.write(`Desde hoy quedan ${dias} para navidad`)
+    </script>
+</body>
+</html>

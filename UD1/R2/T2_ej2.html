@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        let num_columnas = prompt("Ingresa el numero de las columnas")
+        let alto = prompt("Ingresa la altura de la tabla")
+        let ancho = prompt("Ingresa el ancho de la tabla")
+
+        document.write('<table border="0" bgcolor="black" width="200"' + (num_columnas * ancho) + '">');
+        document.write('<tr bgcolor="white" height="' + alto + '">');
+        
+        for (let i = 0; i < num_columnas; i++) {
+            document.write('<td width="50">&nbsp;</td>');
+        }
+
+        document.write('</tr>');
+        document.write('</table>');
+    </script>
+</body>
+
+</html>

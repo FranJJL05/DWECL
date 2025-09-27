@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        function tieneTresDigitos() {
+            if (num1 >= 100 && num1 <= 999) {
+                return "Sí"
+            }else{
+                return "No"
+            }
+        }
+
+        let num1 = prompt(`Introduce un número para comprobar si tiene 3 dígitos`);
+        document.write(`El número ${num1} ` + tieneTresDigitos(num1) + ` tiene 3 dígitos`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <script>
+        var respuesta = "";
+        var clave = "suarez"; // aceptamos sin tilde y en minúsculas
+
+        while (respuesta.normalize("NFD") !== clave) {
+            respuesta = prompt("Control parental:\n¿Apellido del primer presidente español de la democracia?");
+        }
+
+        document.write("<h1>Bienvenido a la página</h1>");
+    </script>
+</body>
+
+</html>
