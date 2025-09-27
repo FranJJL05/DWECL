@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <script>
+        function onlyUniques(...args) {
+            const unico = [];
+
+            for (let i = 0; i < args.length; i++) {
+                let yaExiste = false;
+
+                for (let j = 0; j < unico.length; j++) {
+                    if (args[i] === unico[j]) {
+                        yaExiste = true;
+                        break;
+                    }
+                }
+
+                if (!yaExiste) {
+                    unico.push(args[i]);
+                }
+            }
+
+            return unico;
+        }
+
+        document.write(onlyUniques('cat', 'cat', 'dog', 'pig'));
+        document.write("</br>")
+        document.write(onlyUniques(1, 4, 7, 1, 2, 7, 4));
+    </script>
+</body>
+
+</html>
