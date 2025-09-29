@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+    let frase = prompt("Ingresa una frase:");
+
+    let contador = 0;
+
+    if (frase !== null && frase.length > 0) {
+        for (let i = 0; i < frase.length; i++) {
+        let letraActual = frase.charAt(i);
+
+        if (letraActual === "a" || letraActual === "A") {
+            contador++;
+        }
+        }
+
+        document.write(`La frase introducida es: "${frase}" </br>`);
+        document.write(`La letra 'a' aparece ${contador} veces en la frase.`);
+    } else {
+        console.log("No has introducido ninguna frase.");
+    }
+    </script>
+</body>
+</html>
