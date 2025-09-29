@@ -25,14 +25,8 @@
         let ventanaSecundaria = null;
 
         function abrirVentana() {
-            var titulo = prompt(
-                "Por favor, ingresa el título para la nueva página:"
-            );
+            let titulo = prompt("Por favor, ingresa el título para la nueva página:");
 
-            if (!titulo || titulo.trim() === "") {
-                alert("Operación cancelada o título no ingresado.");
-                return;
-            }
 
             let alto = 400;
             let ancho = 500;
@@ -41,14 +35,9 @@
             ventanaSecundaria = window.open("", "ventanaSecundaria", caracteristicas); 
 
             if (ventanaSecundaria) {
-                ventanaSecundaria.document.write(`
-                        <h2>El título que ingresaste es:</h2>
-                        <h1>${titulo}</h1>
-    
-                `);
+                ventanaSecundaria.document.write(`El título que ingresaste es: ${titulo}`);
 
                 ventanaSecundaria.document.close();
-                ventanaSecundaria.focus();
             } else {
                 alert(
                     "El navegador bloqueó la ventana emergente. Por favor, permítelas para que el programa funcione."
