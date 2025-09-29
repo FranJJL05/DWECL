@@ -18,23 +18,8 @@
         // 1. Contenido HTML para la Ventana Secundaria
         // Este es el contenido que se inyectará en la nueva pestaña
         const secondaryWindowHTML = `
-            <!DOCTYPE html>
-            <html lang="es">
-            <head>
-                <title>Ventana Secundaria</title>
-                <style>
-                    body { font-family: sans-serif; padding: 30px; text-align: center; }
-                    h2 { color: #007bff; }
-                    /* Estilo para el botón de cierre propio */
-                    button { padding: 10px 20px; background-color: #dc3545; color: white; border: none; cursor: pointer; border-radius: 5px; }
-                </style>
-            </head>
-            <body>
-                <h2>Ventana Secundaria</h2>
                 <p>Usa el botón de abajo o el botón de la ventana principal para cerrarme.</p>
                 <button onclick="window.close()">Cerrar Ventana</button>
-            </body>
-            </html>
         `;
 
         function abrirVentana() {
