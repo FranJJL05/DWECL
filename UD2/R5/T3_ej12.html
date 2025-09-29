@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 12</title>
 </head>
+
 <body>
-    
-</body>
+    <h1>Programa de Ventanas con JavaScript</h1>
+    <p>
+        Haz clic en el botón para ingresar el título a través de un cuadro de diálogo.
+    </p>
+
+    <button onclick="abrirVentana()">Abrir Ventana con Título</button>
+
+    <hr />
+
+    <button onclick="cerrarVentanaSecundaria()" id="btnCerrar">
+        Cerrar Ventana Secundaria
+    </button>
+
+    <script>
+        let ventanaSecundaria = null;
+
+        function abrirVentana() {
+            var titulo = prompt(
+                "Por favor, ingresa el título para la nueva página:",
+                "Mi Título Personalizado"
+            );
+
+            if (!titulo || titulo.trim() === "") {
+                alert("Operación cancelada o título no ingresado.");
+                return;
+            }
+
+            let alto = 400;
+            let ancho = 500;
+            let caracteristicas = `width=${ancho},height=${alto}`; 
+
+            ventanaSecundaria = window.open("", "ventanaSecundaria", caracteristicas); 
+
+            if (ventanaSecundaria) {
+                ventanaSecundaria.document.write(`
+                    <!DOCTYPE html>
+                    <html lang="es">
+                    <head>
+                        <title>Contenido Secundario</title>
+                    </head>
+                    <body>
+                        <h2>El título que ingresaste es:</h2>
+                        <h1>${titulo}</h1>
+                    </body>
+                    </html>
+                `);
+
+                ventanaSecundaria.document.close();
+                ventanaSecundaria.focus();
+            } else {
+                alert(
+                    "El navegador bloqueó la ventana emergente. Por favor, permítelas para que el programa funcione."
+                );
+            }
+        }
+
+        function cerrarVentanaSecundaria() {
+            if (ventanaSecundaria && !ventanaSecundaria.closed) {
+                ventanaSecundaria.close();
+                ventanaSecundaria = null;
+                alert("Ventana secundaria cerrada.");
+            } else if (ventanaSecundaria === null) {
+                alert("No se ha abierto ninguna ventana secundaria.");
+            } else {
+                alert("La ventana secundaria ya estaba cerrada.");
+            }
+        }
+    </script>
+</body> 
 </html>
