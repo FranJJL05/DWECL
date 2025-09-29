@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <h1>Ventana Principal</h1>
+    
+    <button id="abrir-btn">Abrir Ventana en Pestaña Nueva</button>
+    
+    <button id="cerrar-desde-principal-btn" disabled>Cerrar Ventana Secundaria</button>
+
+    <script>
+        let secundariaWindow = null; // Variable para guardar la referencia a la nueva pestaña
+
+        // 1. Contenido HTML para la Ventana Secundaria
+        // Este es el contenido que se inyectará en la nueva pestaña
+        const secondaryWindowHTML = `
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <title>Ventana Secundaria</title>
+                <style>
+                    body { font-family: sans-serif; padding: 30px; text-align: center; }
+                    h2 { color: #007bff; }
+                    /* Estilo para el botón de cierre propio */
+                    button { padding: 10px 20px; background-color: #dc3545; color: white; border: none; cursor: pointer; border-radius: 5px; }
+                </style>
+            </head>
+            <body>
+                <h2>Ventana Secundaria</h2>
+                <p>Usa el botón de abajo o el botón de la ventana principal para cerrarme.</p>
+                <button onclick="window.close()">Cerrar Ventana</button>
+            </body>
+            </html>
+        `;
+
+        function abrirVentana() {
+            // Si la ventana ya está abierta, simplemente la enfocamos y salimos
+            if (secundariaWindow && !secundariaWindow.closed) {
+                secundariaWindow.focus(); 
+                return;
+            }
+
+            // Creamos la data:URL con el HTML codificado para inyectar el contenido
+            const dataUrl = 'data:text/html;charset=utf-8,' + encodeURIComponent(secondaryWindowHTML);
+            
+            // Abrimos la pestaña. '_blank' asegura una nueva pestaña.
+            secundariaWindow = window.open(dataUrl, '_blank'); 
+            
+            if (secundariaWindow) {
+                document.getElementById('cerrar-desde-principal-btn').disabled = false;
+                
+                // Iniciamos una comprobación periódica para detectar cierres manuales del usuario
+                const checkClosed = setInterval(() => {
+                    if (secundariaWindow && secundariaWindow.closed) {
+                        clearInterval(checkClosed); // Detener el chequeo
+                        document.getElementById('cerrar-desde-principal-btn').disabled = true;
+                        secundariaWindow = null; // Liberar la referencia
+                    }
+                }, 500);
+            } else {
+                alert("¡El navegador bloqueó la pestaña emergente! Debes permitirla para que el programa funcione.");
+            }
+        }
+
+        // 3. Función para cerrar la pestaña desde el archivo principal
+        function cerrarDesdePrincipal() {
+            // Comprobamos que la referencia exista y que la ventana no esté ya cerrada
+            if (secundariaWindow && !secundariaWindow.closed) {
+                secundariaWindow.close(); // Cierra la pestaña
+                document.getElementById('cerrar-desde-principal-btn').disabled = true;
+                secundariaWindow = null; 
+            }
+        }
+
+        // 4. Asignación de Eventos
+        document.getElementById('abrir-btn').addEventListener('click', abrirVentana);
+        document.getElementById('cerrar-desde-principal-btn').addEventListener('click', cerrarDesdePrincipal);
+    </script>
+
+
+</body>
+</html>
