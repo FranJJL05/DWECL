@@ -26,8 +26,7 @@
 
         function abrirVentana() {
             var titulo = prompt(
-                "Por favor, ingresa el título para la nueva página:",
-                "Mi Título Personalizado"
+                "Por favor, ingresa el título para la nueva página:"
             );
 
             if (!titulo || titulo.trim() === "") {
@@ -43,16 +42,9 @@
 
             if (ventanaSecundaria) {
                 ventanaSecundaria.document.write(`
-                    <!DOCTYPE html>
-                    <html lang="es">
-                    <head>
-                        <title>Contenido Secundario</title>
-                    </head>
-                    <body>
                         <h2>El título que ingresaste es:</h2>
                         <h1>${titulo}</h1>
-                    </body>
-                    </html>
+    
                 `);
 
                 ventanaSecundaria.document.close();
