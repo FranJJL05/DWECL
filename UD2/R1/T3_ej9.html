@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 9</title>
+</head>
+
+<body>
+    <script>
+        let frase = prompt("Ingresa una frase:");
+
+        let contadorVocales = 0;
+
+        if (frase !== null && frase.length > 0) {
+            let fraseEnMinusculas = frase.toLowerCase();
+
+            for (let i = 0; i < fraseEnMinusculas.length; i++) {
+                const letraActual = fraseEnMinusculas.charAt(i);
+
+                if ("aeiou".includes(letraActual)) {
+                    contadorVocales++;
+                }
+            }
+            document.write(`La frase introducida es: "${frase}" </br> El número total de vocales es: ${contadorVocales}`);
+        } else {
+            document.write("Sin Frase</h1><p>No has introducido ninguna frase.");
+        }
+    </script>
+</body>
+
+</html>

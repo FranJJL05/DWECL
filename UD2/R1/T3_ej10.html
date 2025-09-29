@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <script>
+    let frase = prompt("Ingresa una frase:");
+
+    let contadores = {
+        a: 0,
+        e: 0,
+        i: 0,
+        o: 0,
+        u: 0,
+    };
+
+    if (frase !== null && frase.length > 0) {
+        const fraseEnMinusculas = frase.toLowerCase();
+
+        for (let i = 0; i < fraseEnMinusculas.length; i++) {
+            let letraActual = fraseEnMinusculas.charAt(i);
+
+            switch (letraActual) {
+                case "a":
+                    contadores.a++;
+                break;
+                case "e":
+                    contadores.e++;
+                break;
+                case "i":
+                    contadores.i++;
+                break;
+                case "o":
+                    contadores.o++;
+                break;
+                case "u":
+                    contadores.u++;
+                break;
+            }
+        }
+
+        document.write(`Frase introducida:"${frase}"</br>
+        <ul>
+            <li>La vocal 'a'</b> aparece: ${contadores.a} veces.</li>
+            <li>La vocal 'e'  aparece: ${contadores.e}  veces.</li>
+            <li>La vocal 'i'  aparece: ${contadores.i}  veces.</li>
+            <li>La vocal 'o'  aparece: ${contadores.o}  veces.</li>
+            <li>La vocal 'u'  aparece: ${contadores.u}  veces.</li>
+        </ul>`);
+    } else {
+        document.write("Sin Frase. No has introducido ninguna frase.");
+    }
+    </script>
+</body>
+</html>
