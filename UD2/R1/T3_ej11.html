@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=ç, initial-scale=1.0" />
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>
+        let fraseOriginal = prompt("Ingresa una frase para invertirla:");
+
+        let fraseInvertida = "";
+
+        if (fraseOriginal !== null && fraseOriginal.length > 0) {
+            for (let i = fraseOriginal.length - 1; i >= 0; i--) {
+                let caracter = fraseOriginal.charAt(i);
+                fraseInvertida += caracter;
+            }
+
+            document.write(`Frase Original: "${fraseOriginal}"</br> Frase Invertida: "${fraseInvertida}"`);
+        }  else {
+        document.write("Sin Frase. No has introducido ninguna frase.");
+        }
+    </script>
+</body>
+</html>
