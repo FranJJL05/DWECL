@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    <button id="btnAbrir" onclick="abrirVentana()">
+        Abrir ventana secundaria
+    </button>
+    <button id="btnCerrar" onclick="cerrarVentana()" disabled>
+        Cerrar ventana secundaria
+    </button>
+    <button id="btnEnviar" onclick="enviarMensaje()" disabled>
+        Enviar mensaje a la secundaria
+    </button>
+
+    <script>
+        let ventana = null;
+
+        function abrirVentana() {
+            ventana = window.open("", "Secundaria", "width=450,height=250");
+
+            if (ventana) {
+                ventana.document.write(`
+                        <p id="parrafo">Esperando mensaje de la ventana principal...</p>
+                        <button onclick="window.close()">Cerrar Ventana</button>
+                `);
+                ventana.recibeMensaje = function(texto) {
+                            const objeto = ventana.document.getElementById('parrafo');
+                            objeto.innerHTML = 'Mensaje recibido: ' + texto;
+                };
+                ventana.document.close();
+
+                document.getElementById("btnAbrir").disabled = true;
+                document.getElementById("btnCerrar").disabled = false;
+                document.getElementById("btnEnviar").disabled = false;
+            }
+        }
+
+        function cerrarVentana() {
+            if (ventana && !ventana.closed) {
+                ventana.close();
+            }
+            document.getElementById("btnAbrir").disabled = false;
+            document.getElementById("btnCerrar").disabled = true;
+            document.getElementById("btnEnviar").disabled = true;
+        }
+
+        function enviarMensaje() {
+            if (ventana && !ventana.closed) {
+                const mensaje = "Hola desde la Ventana Principal.";
+                ventana.recibeMensaje(mensaje);
+            } else {
+                console.error(
+                    "La ventana secundaria no está abierta. Por favor, ábrela primero."
+                );
+                document.getElementById("btnAbrir").disabled = false;
+                document.getElementById("btnCerrar").disabled = true;
+                document.getElementById("btnEnviar").disabled = true;
+            }
+        }
+
+        window.onload = cerrarVentana;
+    </script>
+</body>
+
+</html>
