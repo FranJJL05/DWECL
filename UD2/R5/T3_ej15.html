@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <body>
+    <h2>Hemos cambiado de ubicación esta página.</h2>
+    <p>En breves momentos será redireccionado...</p>
+    <p>Redirección en <span id="contador">5</span> segundos</p>
+
+    <script>
+        let segundos = 5;
+        let cuentaAtras = setInterval(() => {
+            segundos--;
+            document.getElementById("contador").textContent = segundos;
+            
+            if (segundos === 0) {
+                clearInterval(cuentaAtras);
+                window.location.href = "http://www.pccomponentes.com";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

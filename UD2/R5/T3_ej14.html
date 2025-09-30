@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+<body>
+    <h2 onclick="abrirVentanas()">Haz clic aquí</h2>
+
+    <script>
+        function abrirVentanas() {
+            for (let i = 1; i <= 5; i++) {
+                let ventana = window.open("https://www.google.com", "ventana" + i, "width=350,height=350");
+
+                if (ventana) {
+                    ventana.document.write(`
+                        <p>Ventana ${i}</p>
+                        <button onclick="window.close()">Cerrar</button>
+                    `);
+                    ventana.document.close();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
