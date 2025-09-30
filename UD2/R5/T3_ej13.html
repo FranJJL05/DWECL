@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 13</title>
 </head>
 <body>
-    
+    <h1>Control de Ventanas Secundarias</h1>
+    <p>Ventana Principal</p>
+
+    <button id="btnAbrir" onclick="abrirVentana()">Abrir Nueva Ventana</button>
+    <button id="btnCerrar" onclick="cerrarVentana()" disabled>Cerrar Ventana Secundaria</button>
 
 
+    <script>
+        let ventana = null;
+
+        function abrirVentana() {
+            ventana = window.open("", "Secundaria", "width=400,height=300");
+
+            if (ventana) {
+                ventana.document.write(`
+                    <p>Esta es la ventana secundaria.</p>
+                    <button onclick="window.close()">Cerrar Ventana</button>
+                `);
+                ventana.document.close();
+
+                document.getElementById("btnAbrir").disabled = true;
+                document.getElementById("btnCerrar").disabled = false;
+            }
+        }
+
+        function cerrarVentana() {
+            if (ventana && !ventana.closed) {
+                ventana.close();
+            }
+            document.getElementById("btnAbrir").disabled = false;
+            document.getElementById("btnCerrar").disabled = true;
+        }
+    </script>
 </body>
 </html>
