@@ -38,6 +38,19 @@
             } 
         }
 
+        
+        function cerrarVentanaSecundaria() {
+            if (ventanaSecundaria && !ventanaSecundaria.closed) {
+                ventanaSecundaria.close();
+                ventanaSecundaria = null;
+                alert("Ventana secundaria cerrada.");
+            } else if (ventanaSecundaria === null) {
+                alert("No se ha abierto ninguna ventana secundaria.");
+            } else {
+                alert("La ventana secundaria ya estaba cerrada.");
+            }
+        }
+
     </script>
 </body>
 </html>
