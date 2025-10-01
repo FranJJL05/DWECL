@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Susana git ramas</title>
+</head>
+<body>
+    <h1>Programa de Ventanas con JavaScript</h1>
+    <p>
+        Haz clic en el botón para ingresar el título
+    </p>
+
+    <button onclick="abrirVentana()">Abrir Ventana con Título</button>
+
+    <hr />
+
+    <button onclick="cerrarVentanaSecundaria()" id="btnCerrar">
+        Cerrar Ventana Secundaria
+    </button>
+
+    <script>
+        let ventanaSecundaria = null;
+
+        function abrirVentana() {
+            let titulo = prompt("Por favor, ingresa el título para la nueva página:");
+
+
+            let alto = 400;
+            let ancho = 500;
+            let caracteristicas = `width=${ancho},height=${alto}`; 
+
+            ventanaSecundaria = window.open("", "ventanaSecundaria", caracteristicas); 
+
+            if (ventanaSecundaria) {
+                ventanaSecundaria.document.write(`El título que ingresaste es: ${titulo}`);
+                ventanaSecundaria.document.close();
+            } 
+        }
+
+    </script>
+</body>
+</html>
