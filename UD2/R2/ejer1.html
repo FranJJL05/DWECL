@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="contador">60</p>
+
+    <script>
+        let tiempo = 60;
+
+        const intervalo = setInterval(() => {
+        document.getElementById("contador").textContent = tiempo;
+        tiempo--;
+
+        if (tiempo < 0) {
+            clearInterval(intervalo);
+            document.getElementById("contador").textContent = "Terminado";
+        }
+    }, 1000);
+    </script>
+</body>
+</html>
