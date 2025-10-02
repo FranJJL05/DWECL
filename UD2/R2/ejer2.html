@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <div id="reloj"></div>
+
+    <script>
+        function actualizarReloj() {
+            let ahora = new Date();
+
+            let horas = ahora.getHours();
+            let minutos = ahora.getMinutes();
+            let segundos = ahora.getSeconds();
+
+
+            horas = String(horas)
+            minutos = String(minutos)
+            segundos = String(segundos)
+
+
+            const tiempo = `${horas}:${minutos}:${segundos}`;
+
+
+            document.getElementById("reloj").textContent = tiempo;
+        }
+        actualizarReloj();
+
+        setInterval(actualizarReloj, 1000);
+
+
+    </script>
+</body>
+</html>

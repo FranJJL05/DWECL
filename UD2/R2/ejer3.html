@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejercicio 3</title>
+</head>
+<body>
+
+<p>Redirección a Google en...</p>
+<div id="reloj">10</div>
+
+<script>
+
+    let tiempoRestante = 10; 
+
+    let elementoReloj = document.getElementById('reloj');
+
+    function cuentaRegresiva() {
+
+        elementoReloj.textContent = tiempoRestante;
+
+        if (tiempoRestante <= 0) {
+            clearInterval(intervalo); 
+
+            elementoReloj.textContent = "¡Tiempo terminado! Redirigiendo...";
+
+            location.replace("https://www.google.com");
+            
+        } else {
+            tiempoRestante--;
+        }
+    }
+
+    cuentaRegresiva();
+    let intervalo = setInterval(cuentaRegresiva, 1000);
+</script>
+
+</body>
+</html>
