@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer clase operacion funcion unificada</title>
+</head>
+<body>
+    <script>
+        function operacion(v1, v2, op) {
+            switch (op){
+                case "+":
+                    return v1 + v2;
+                break;
+                case "-":
+                    return v1 - v2;
+                break;
+                case "*":
+                    return v1 * v2;
+                break;
+                case "/":
+                    return v1/v2;
+                break;
+            }  
+        }
+        document.write(operacion(1, 2, "+"));
+
+        /*Como lo vamos a hacer a partir de hoy*/
+        function suma(v1, v2) { return v1 + v2;}
+        
+        function operacion(v1,v2, fop) {
+            //comprobar parametros
+            return fop(v1,v2)
+        }
+
+        document.write(operacion(2,3,suma))
+    </script>
+</body>
+</html>
