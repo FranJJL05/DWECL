@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de clase, factorial funcion normal y recursiva</title>
+</head>
+<body>
+    <script>
+        function factorial(numero) {
+            if (numero === 0 || numero === 1 ) {
+                return 1;
+            }
+            let resultado = 1;
+            for (let i = 2; i <= numero; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+
+        document.write(factorial(4));
+
+        /*Con recursividad*/
+
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1
+            }
+            return n*factorial(n-1); 
+        }
+
+    </script>
+</body>
+</html>
