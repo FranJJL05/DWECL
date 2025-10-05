@@ -16,8 +16,6 @@
 
         function actualizarContador() {
             segundos--;
-            
-            // CAMBIO AQUÍ: Usamos .innerHTML en lugar de .textContent
             document.getElementById("contador").innerHTML = segundos;
             
             if (segundos === 0) {
