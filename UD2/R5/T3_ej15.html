@@ -13,15 +13,20 @@
 
     <script>
         let segundos = 5;
-        let cuentaAtras = setInterval(() => {
+
+        function actualizarContador() {
             segundos--;
-            document.getElementById("contador").textContent = segundos;
+            
+            // CAMBIO AQUÍ: Usamos .innerHTML en lugar de .textContent
+            document.getElementById("contador").innerHTML = segundos;
             
             if (segundos === 0) {
                 clearInterval(cuentaAtras);
                 window.location.href = "http://www.pccomponentes.com";
             }
-        }, 1000);
+        }
+
+        let cuentaAtras = setInterval(actualizarContador, 1000);
     </script>
 </body>
 </html>
