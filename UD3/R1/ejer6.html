@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="function.js"></script>
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+    const base = parseFloat(prompt("Introduce la base:"));
+    const exponente = parseInt(prompt("Introduce el exponente (entero no negativo):"));
+
+        if (exponente < 0) {
+        document.write("Por favor, introduce valores válidos.");
+        } else {
+        const resultado = potencia(base, exponente);
+        document.write(`${base} elevado a ${exponente} es igual a ${resultado}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="function.js"></script>
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        const opcion = prompt("¿Qué quieres calcular?\n1 - Volumen de una esfera\n2 - Área de un círculo");
+        const radio = parseFloat(prompt("Introduce el radio:"));
+
+        if (opcion === "1") {
+            const volumen = calcularVolumenEsfera(radio);
+            document.write("El volumen de la esfera es: " + volumen);
+        } else if (opcion === "2") {
+            const area = calcularAreaCirculo(radio);
+            document.write("El área del círculo es: " + area);
+        } else {
+            document.write("Opción no válida. Recarga la página e inténtalo de nuevo.");
+        }
+
+    </script>
+</body>
+</html>
