@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Ubicación Actual en el Mapa</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        /* Estilos básicos para el mapa y mensajes */
+        #mapa {
+            height: 600px; /* Altura fija para que el mapa sea visible */
+            width: 100%;
+        }
+        .mensaje {
+            padding: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .info { /* Estilo para el mensaje de carga */
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .error { /* Estilo para los mensajes de error */
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mapa Donde Estoy (Ubicación Exacta) 📍</h1>
+    
+    <div id="mensaje_ubicacion" class="mensaje info" style="display: block;">
+        Buscando tu ubicación... Por favor, **acepta la solicitud de permiso del navegador** (puedes necesitar recargar).
+    </div>
+    
+    <div id="mapa"></div>
+
+    <script>
+        // 1. Inicializar el mapa
+        // Se centra en una vista por defecto (Madrid, España) con zoom 5
+        var mapa = L.map('mapa').setView([40.416775, -3.703790], 5);
+
+        // 2. Añadir la capa de mosaicos (OpenStreetMap)
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(mapa);
+        
+        // Función que se ejecuta si la ubicación se encuentra con éxito
+        function onLocationSuccess(pos) {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            const ubicacion = [lat, lon];
+            const precision = pos.coords.accuracy;
+
+            // Oculta el mensaje de "Buscando..."
+            document.getElementById('mensaje_ubicacion').style.display = 'none';
+
+            // Centra el mapa en la ubicación con zoom de detalle (17)
+            mapa.setView(ubicacion, 17);
+
+            // Añadir un marcador y un popup con información
+            L.marker(ubicacion).addTo(mapa)
+                .bindPopup("¡Estás aquí!<br>Precisión aproximada: " + Math.round(precision) + " metros.")
+                .openPopup();
+
+            // Círculo para visualizar el área de precisión
+            L.circle(ubicacion, {
+                color: 'blue',
+                fillColor: '#30f',
+                fillOpacity: 0.2,
+                radius: precision 
+            }).addTo(mapa);
+        }
+
+        // Función que se ejecuta si hay un error en la geolocalización
+        function onLocationError(error) {
+            const mensajeElemento = document.getElementById('mensaje_ubicacion');
+            mensajeElemento.className = 'mensaje error'; // Cambia a estilo de error
+            mensajeElemento.style.display = 'block';
+
+            let errorMessage = "Error Desconocido: No se pudo obtener la ubicación.";
+            
+            // Asigna un mensaje más claro según el tipo de error
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    errorMessage = "Permiso Denegado: Tienes que permitir la geolocalización.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorMessage = "No Disponible: El dispositivo no pudo encontrar tu ubicación (mala señal).";
+                    break;
+                case error.TIMEOUT:
+                    errorMessage = "Tiempo Agotado: La búsqueda tardó demasiado.";
+                    break;
+            }
+            mensajeElemento.innerHTML = errorMessage + "<br> Asegúrate de estar usando un servidor seguro (HTTPS) o local.";
+        }
+
+        // 5. Llamar a la API de Geolocalización
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError, {
+                enableHighAccuracy: true, // Pide la mejor precisión
+                timeout: 15000, // Máximo 15 segundos de espera
+                maximumAge: 0  // No usar caché
+            });
+        } else {
+            // Mensaje si el navegador no soporta la API
+            document.getElementById('mensaje_ubicacion').className = 'mensaje error';
+            document.getElementById('mensaje_ubicacion').innerHTML = "Error: Tu navegador no soporta la API de Geolocalización.";
+        }
+    </script>
+</body>
+</html>
