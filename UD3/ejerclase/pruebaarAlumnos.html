@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arNotas = [3, 4, 6, 9, 2]
+
+        function localizar(nota) {
+            return nota>=5
+        }
+
+        let arAlumnos = [{Nombre: "Diana", nota: 8},
+                        {Nombre: "Lucas", nota: 4},
+                        {Nombre: "Cristina", nota: 9}
+        ]
+
+        let valor = arNotas.find(localizar)
+        document.write(valor);
+
+        let primerSuspenso = arAlumnos.find(function (obAlumno){
+            return obAlumno.nota < 5
+        })
+        document.write("<br> El primer alumno suspenso es ", primerSuspenso.Nombre, primerSuspenso.nota)
+
+        let primerAprobado = arAlumnos.find(function (obAlumno){
+            return obAlumno.nota >= 5
+        })
+        document.write("<br> El primer alumno suspenso es ", primerAprobado.Nombre, primerAprobado.nota)
+
+        
+//------------------------------------------------------------------------
+        function encuentra(array,fLocaliza){
+            let objeto;
+            for (let i = 0; i < array.length; i++) {
+                objeto = array[i];
+                if (fLocaliza(objeto) == true) {
+                    return objeto;
+                }
+                
+            }
+        }
+
+        function fLocaliza(arg) {
+            return arg.nota>5;
+        }
+
+        let suspenso2 = encuentra(arAlumnos, fLocaliza);
+        document.write("<br>", suspenso2.Nombre)
+    </script>
+</body>
+</html>
