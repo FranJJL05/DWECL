@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="libreriaRelacion2.js"></script>
+    <title>Ordenar Números Aleatorios</title>
+</head>
+<body>
+    <h2>Ordenar Números Aleatorios</h2>
+    <button onclick="ejecutar()">Generar y ordenar números</button>
+
+    <script>
+        function ejecutar() {
+            const N = 100; 
+            const numeros = generarNumerosAleatorios(N);
+
+            document.write("<h3>Números sin ordenar:</h3>");
+            for (let i = 0; i < numeros.length; i++) {
+                document.write(numeros[i] + " ");
+            }
+
+            const ordenados = ordenarBurbuja(numeros.slice());
+            const sinDuplicados = eliminarDuplicados(ordenados);
+
+            document.write("<br><br><h3>Números ordenados (sin duplicados):</h3>");
+            for (let i = 0; i < sinDuplicados.length; i++) {
+                document.write(sinDuplicados[i] + " ");
+            }
+        }
+    </script>
+</body>
+</html>
