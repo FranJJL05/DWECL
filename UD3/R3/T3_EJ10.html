@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="libreriaRelacion3.js"></script>
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <h1>Sistema de Reservas de Asientos</h1>
+
+    <h3>1. Consultar asientos libres</h3>
+    <label for="tipo">Clase:</label>
+    <select id="tipo" onchange="mostrarAsientos()">
+        <option value="First">First (1-5)</option>
+        <option value="Turista">Turista (6-10)</option>
+    </select>
+    <div id="asientosLibres"></div>
+
+    <h3>2. Reservar asiento</h3>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre">
+    <label for="asiento">Número de asiento:</label>
+    <input type="number" id="asiento">
+    <button onclick="reservarAsiento()">Reservar</button>
+
+    <h3>3. Imprimir tarjeta de embarque</h3>
+    <label for="asientoImp">Número de asiento:</label>
+    <input type="number" id="asientoImp">
+    <button onclick="imprimirTarjeta()">Imprimir tarjeta</button>
+</body>
+</html>

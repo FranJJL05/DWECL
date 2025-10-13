@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const art = [];
+
+        function crearArticulo(codigo, nombre, precio) {
+        return {
+            codigo,
+            nombre,
+            precio,
+            pvp() {
+                return precio * 1.20;
+            },
+            descuento () {
+                return pvp * 0.10;
+            },
+            muestraHTML() {
+                document.write(`Código: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio} <br>`);
+            }
+        };
+    }
+
+        for (let i = 0; i < 5; i++) {
+            const nuevoArticulo = crearArticulo(1 + i, `Articulo${i}`, (1.00 + i));
+            art.push(nuevoArticulo);
+
+        }
+
+        art.forEach(articulo => articulo.muestraHTML())
+
+        //Función encuentra
+        function encuentra(art, codigo) {
+            return art.find(resultado => resultado.codigo == codigo)
+        }
+
+        document.write("<br><br> Articulo que tiene de codigo 1: ", encuentra(art, 1).nombre)
+
+        //Función ordena Precio
+        function ordenaPrecio(ar) {
+            return ar.sort((obj1, obj2) => ob1.precio-obj2.precio)
+        }
+
+        document.write("<br><br> Ordena precio: ", ordenaPrecio(art))
+    </script>
+</body>
+
+</html>
