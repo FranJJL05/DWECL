@@ -271,3 +271,75 @@ function imprimirTarjeta() {
     ventana.document.write(`<p>Asiento: ${reserva.asiento}</p>`);
     ventana.document.write(`<p>Clase: ${reserva.clase}</p>`);
 }
+
+//Ejercicio 11
+
+// MATRIZ DE VENTAS (valores inventados)
+// Filas = productos (1 a 5)
+// Columnas = vendedores (1 a 4)
+
+let ventas = [
+    [120, 200, 150, 80],   // Producto 1
+    [300, 250, 100, 90],   // Producto 2
+    [50, 400, 300, 100],  // Producto 3
+    [500, 100, 200, 150],  // Producto 4
+    [200, 150, 250, 300]   // Producto 5
+];
+
+const productos = 5;
+const vendedores2 = 4;
+
+// FUNCIÓN PARA CALCULAR LOS TOTALES
+function calcularTotales() {
+    let totalVendedor = [0, 0, 0, 0];
+    let totalGeneral = 0;
+    let totalPorProducto = [];
+
+    for (let p = 0; p < productos; p++) {
+        let totalProducto = 0;
+        for (let v = 0; v < vendedores2; v++) {
+            totalProducto += ventas[p][v];
+            totalVendedor[v] += ventas[p][v];
+        }
+        totalPorProducto.push(totalProducto);
+        totalGeneral += totalProducto;
+    }
+
+    return { totalVendedor, totalPorProducto, totalGeneral };
+}
+
+// FUNCIÓN PARA MOSTRAR LA TABLA EN HTML
+function mostrarTabla() {
+    const { totalVendedor, totalPorProducto, totalGeneral } = calcularTotales();
+
+    let html = "<table border='1'>";
+    html += "<tr><th>Producto</th>";
+
+    for (let v = 0; v < vendedores; v++) {
+        html += "<th>Vendedor " + (v + 1) + "</th>";
+    }
+    html += "<th>Total Producto</th></tr>";
+
+    // Filas de productos
+    for (let p = 0; p < productos; p++) {
+        html += "<tr><td>Producto " + (p + 1) + "</td>";
+        for (let v = 0; v < vendedores2; v++) {
+            html += "<td>" + ventas[p][v] + "</td>";
+        }
+        html += "<td>" + totalPorProducto[p] + "</td></tr>";
+    }
+
+    // Fila de totales
+    html += "<tr><td>Total Vendedor</td>";
+    for (let v = 0; v < vendedores2; v++) {
+        html += "<td>" + totalVendedor[v] + "</td>";
+    }
+    html += "<td>" + totalGeneral + "</td></tr>";
+
+    html += "</table>";
+
+    document.getElementById("resultado").innerHTML = html;
+}
+
+// PROGRAMA PRINCIPAL
+mostrarTabla();
