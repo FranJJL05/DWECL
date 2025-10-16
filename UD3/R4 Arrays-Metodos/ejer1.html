@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        //Encontrar el número más grande
+        const numeros = [4, 17, 9, 34, 2, 88, 3];
+        const mayor = Math.max(...numeros);
+
+        console.log("El número mñas grande es:", mayor);
+
+        //Encontrar la cadena más larga
+        const palabras = ["sol", "montaña", "río", "maravilloso", "luz"];
+
+        let masLarga = "";
+        palabras.forEach(function (palabra) {
+            if (palabra.length > masLarga.length) {
+                masLarga = palabra;
+            }
+        });
+
+        console.log("La palabra más larga es:", masLarga);
+
+        //Encontrar todos los números pares
+        const numeros2 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        const pares = numeros2.filter(function (num) {
+            return num % 2 === 0;
+        });
+
+        console.log("Números pares:", pares);
+
+        //Encontrar todos los números impares
+        const numeros3 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        const impares = numeros3.filter(function (num) {
+            return num % 2 !== 0;
+        });
+
+        console.log("Números impares:", impares);
+
+        //Encontrar palabras que contienen "is"
+        const palabras2 = ["isla", "historia", "piso", "casa", "crisis"];
+
+        const contieneIs = palabras2.filter(function (palabra) {
+            return palabra.includes("is");
+        });
+
+        console.log("Palabras que contienen 'is':", contieneIs);
+
+        //Comprobar si todos los números son divisibles por 3
+        const numeros4 = [3, 6, 9, 12, 15];
+
+        const todosDivTres = numeros4.every(function (num) {
+            return num % 3 === 0;
+        });
+
+        console.log("¿Todos son divisibles por 3?", todosDivTres);
+
+        //Unir (zip) dos arrays
+        const nombres = ["Ana", "Luis", "Marta"];
+        const edades = [23, 31, 19];
+
+        const combinados = nombres.map(function (nombre, i) {
+            return [nombre, edades[i]];
+        });
+
+        console.log("Arrays combinados:", combinados);
+
+        //Ordenar el array combinado de menor a mayor
+        const nums1 = [8, 3, 12];
+        const nums2 = [4, 9, 1];
+
+        const unidos = nums1.concat(nums2);
+        unidos.sort(function (a, b) {
+            return a - b;
+        });
+
+        console.log("Ordenados de menor a mayor:", unidos);
+
+        //Eliminar la primera palabra del array
+        let palabras3 = ["hola", "mundo", "javascript"];
+
+        palabras3 = palabras3.slice(1);
+
+        console.log("Sin la primera palabra:", palabras3);
+
+        //Añadir una nueva palabra al inicio
+        let palabras4 = ["mundo", "javascript"];
+
+        palabras5 = ["hola"].concat(palabras4);
+
+        console.log("Con nueva palabra al inicio:", palabras5);
+
+        //Reemplazar algunos elementos
+        let frutas = ["manzana", "pera", "plátano", "kiwi"];
+
+        const nuevasFrutas = frutas.map(function (fruta) {
+            if (fruta === "pera") {
+                return "naranja";
+            } else {
+                return fruta;
+            }
+        });
+
+        console.log("Frutas modificadas:", nuevasFrutas);
+    </script>
+</body>
+
+</html>

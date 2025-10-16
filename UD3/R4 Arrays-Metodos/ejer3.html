@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <script>
+        // --- Mapa del tesoro (5x5) ---
+        const mapa = [
+            [34, 21, 32, 41, 25],
+            [14, 42, 43, 14, 31],
+            [54, 45, 52, 42, 23],
+            [33, 15, 51, 31, 35],
+            [21, 52, 33, 13, 23]
+        ];
+
+        // --- Mostrar el mapa ---
+        document.write("<table class='mapa'>");
+        for (let fila = 0; fila < 5; fila++) {
+            document.write("<tr>");
+            for (let col = 0; col < 5; col++) {
+                document.write("<td>" + mapa[fila][col] + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        // --- Buscar el tesoro ---
+        let fila = 1; // empezamos en (1,1)
+        let col = 1;
+        const visitados = [];
+
+        while (true) {
+            visitados.push("(" + fila + "," + col + ")");
+            const valor = mapa[fila - 1][col - 1];
+
+            // comprobamos si encontramos el tesoro
+            if (valor === fila * 10 + col) {
+                document.write("<div class='resultado'>");
+                document.write("<strong>Celdas visitadas:</strong> " + visitados.join(" ➜ ") + "<br>");
+                document.write("<strong>¡Tesoro encontrado en (" + fila + "," + col + ")! </strong>");
+                document.write("</div>");
+                break;
+            }
+
+            // siguiente pista
+            fila = Math.floor(valor / 10);
+            col = valor % 10;
+
+            // por seguridad (evitar bucles infinitos)
+            if (visitados.length > 25) {
+                document.write("<p>No se encontró el tesoro</p>");
+                break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        const names = [
+            "John Doe",
+            "Alice Brown",
+            "James Smith",
+            "Julia Roberts",
+            "Mark Johnson",
+            "Jack Black",
+            "Anna Lee"
+        ];
+
+        // Step 1: filter names starting with J
+        const jNames = names.filter(name => name.trim().startsWith("J"));
+
+        // Step 2: map to initials
+        const initials = jNames.map(name => {
+            return name
+                .split(" ")              // split into words
+                .map(part => part[0].toUpperCase()) // take first letter of each
+                .join(".") + ".";        // join and add final dot
+        });
+
+        // Step 3: sort alphabetically
+        const sortedInitials = initials.sort();
+
+        console.log(sortedInitials);
+
+    </script>
+</body>
+
+</html>
