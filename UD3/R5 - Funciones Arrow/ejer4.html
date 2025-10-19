@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let eye = "eye";
+
+        /**
+        * 4. This is the shortest possible arrow function syntax for returning
+        * a simple value, eliminating unnecessary braces and 'return' keyword.
+        * * Original (Wonky): const fire = ( ) = > { return `bulls-`; }
+        * Fixed (Shortest): const fire = () => `bulls-`;
+        * * @returns {string} The string "bulls-".
+        */
+        const fire = () => `bulls-`;
+
+
+        const target = fire() + eye; 
+        console.log("\n--- Shortest Function Demo ---");
+        console.log(`Variable 'eye': ${eye}`);
+        console.log(`Function 'fire': ${fire()}`);
+        console.log(`Result: ${target}`);
+    </script>
+</body>
+
+</html>

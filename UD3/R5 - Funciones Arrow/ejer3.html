@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+        * 3. Arrow function that takes an array of integers and returns their sum
+        * using the built-in Array.prototype.reduce() method.
+        *
+        * @param {number[]} arr - The array of integers to sum.
+        * @returns {number} The total sum of the array elements.
+        */
+        const sumArrayElements = (arr) => arr.reduce((sum, current) => sum + current, 0);
+
+
+        const numbers = [10, 5, 20, 15];
+        const totalSum = sumArrayElements(numbers);
+        console.log("\n--- Array Sum Demonstration ---");
+        console.log(`Array: [${numbers.join(', ')}]`);
+        console.log(`Total Sum (using reduce): ${totalSum}`);
+
+    </script>
+</body>
+
+</html>

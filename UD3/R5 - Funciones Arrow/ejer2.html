@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        /**
+        * Arrow function that constructs a greeting string using template literals.
+        *
+        * It uses the concise syntax (no return keyword or curly braces)
+        * because the function body is a single return expression.
+        * @param {string} name - The name of the person.
+        * @param {number} age - The age of the person.
+        * @returns {string} The formatted greeting.
+        */
+        const greetPerson = (name, age) => `Hello, I am ${name}, and I am ${age} years old.`;
+
+
+
+        // Example 1: Basic usage
+        const greeting1 = greetPerson("Leo", 28);
+        console.log("Example 1:", greeting1);
+
+        // Example 2: Using different inputs
+        const greeting2 = greetPerson("Sophia", 45);
+        console.log("Example 2:", greeting2);
+    </script>
+</body>
+
+</html>

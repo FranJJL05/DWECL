@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+        * 9. Arrow function to calculate the nth Fibonacci number (recursive).
+        * The block body syntax (with {}) is needed because it contains an
+        * 'if' statement and multiple 'return' paths.
+        *
+        * @param {number} n - The position in the Fibonacci sequence (starting at 1).
+        * @returns {number} The Fibonacci number at position n.
+        */
+        const fibonacci = (n) => {
+            if (n < 3) {
+                return 1;
+            }
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        };
+
+
+        const fib5 = fibonacci(5); 
+        const fib8 = fibonacci(8); 
+        console.log("\n--- Fibonacci Demonstration ---");
+        console.log(`The 5th Fibonacci number is: ${fib5}`);
+        console.log(`The 8th Fibonacci number is: ${fib8}`);
+
+    </script>
+</body>
+
+</html>
