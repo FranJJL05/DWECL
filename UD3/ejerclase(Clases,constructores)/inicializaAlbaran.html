@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        // ==== Clase Cliente ====
+        // Clase Cliente
         class Cliente {
             constructor(NIF, nombre, direccion, telefono, email) {
                 this.NIF = NIF;
@@ -28,7 +28,7 @@
             }
         }
 
-        // ==== Clase Articulo ====
+        // Clase Articulo
         class Articulo {
             constructor(codigo, nombre, precio) {
                 this.codigo = codigo;
@@ -50,7 +50,7 @@
             }
         }
 
-        // ==== Clase Albaran ====
+        // Clase Albaran
         class Albaran {
             constructor(cliente, nAlbaran, fecha, lineas = []) {
                 this.cliente = cliente;
@@ -86,7 +86,7 @@
             }
         }
 
-        // ==== Inicialización ====
+        // Inicialización
         function inicializaAlbaran() {
             const cliente1 = new Cliente(1234, "Juan", "Avenida de la estación", 666777888, "j@gmail.com");
             const articulo1 = new Articulo(333, "Lápiz", "1.20");
