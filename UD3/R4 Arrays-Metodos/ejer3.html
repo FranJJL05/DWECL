@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <!--Todo tiene que ser aleatorio, los numeros, y el camino (una función que genere el camino)-->
     <script>
         // --- Mapa del tesoro (5x5) ---
         const mapa = [
@@ -15,10 +16,10 @@
             [14, 42, 43, 14, 31],
             [54, 45, 52, 42, 23],
             [33, 15, 51, 31, 35],
-            [21, 52, 33, 13, 23]
+            [21, 52, 33, 13, 23],
         ];
 
-        // --- Mostrar el mapa ---
+        // --- Mostrar el   mapa ---
         document.write("<table class='mapa'>");
         for (let fila = 0; fila < 5; fila++) {
             document.write("<tr>");
@@ -41,8 +42,18 @@
             // comprobamos si encontramos el tesoro
             if (valor === fila * 10 + col) {
                 document.write("<div class='resultado'>");
-                document.write("<strong>Celdas visitadas:</strong> " + visitados.join(" ➜ ") + "<br>");
-                document.write("<strong>¡Tesoro encontrado en (" + fila + "," + col + ")! </strong>");
+                document.write(
+                    "<strong>Celdas visitadas:</strong> " +
+                    visitados.join(" ➜ ") +
+                    "<br>"
+                );
+                document.write(
+                    "<strong>¡Tesoro encontrado en (" +
+                    fila +
+                    "," +
+                    col +
+                    ")! </strong>"
+                );
                 document.write("</div>");
                 break;
             }
@@ -57,7 +68,6 @@
                 break;
             }
         }
-
     </script>
 </body>
 
