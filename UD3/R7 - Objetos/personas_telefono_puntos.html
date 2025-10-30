@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios 1-3: Personas, Teléfono, Puntos y Líneas</title>
+</head>
+
+<body>
+    <h1>Ejercicios 1-3</h1>
+    <script>
+        // 1.- Personas
+        // Objeto literal persona con nombre, edad y método mayorDeEdad
+        const personaLiteral = {
+            nombre: "Ana",
+            edad: 20,
+            mayorDeEdad: function () {
+                return this.edad >= 18;
+            },
+        };
+
+        console.log("1) Objeto literal persona:", personaLiteral);
+        console.log("¿Ana es mayor de edad?", personaLiteral.mayorDeEdad());
+
+        // Función constructora Persona con mismo método
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.mayorDeEdad = function () {
+                return this.edad >= 18;
+            };
+        }
+
+        const p1 = new Persona("Luis", 17);
+        const p2 = new Persona("Marta", 34);
+        const p3 = new Persona("Pedro", 18);
+
+        console.log("1) Personas creadas con función constructora:", p1, p2, p3);
+        console.log("¿Luis es mayor de edad?", p1.mayorDeEdad());
+
+        // Array con varios objetos persona
+        const personas = [];
+        personas.push(p1, p2, p3);
+
+        console.log("1) Array de personas:", personas);
+
+        // Función que devuelve la edad promedio
+        function edadPromedio(lista) {
+            let suma = 0;
+            for (let i = 0; i < lista.length; i++) {
+                suma += lista[i].edad;
+            }
+            return suma / lista.length;
+        }
+
+        console.log("1) Edad promedio del grupo:", edadPromedio(personas));
+
+        // 2.- Teléfono
+        // Función constructora Telefono
+        function Telefono(numero) {
+            this.numero = numero;
+            this.numeroLlamadas = 0;
+            this.llamar = function () {
+                this.numeroLlamadas = this.numeroLlamadas + 1;
+            };
+        }
+
+        const t1 = new Telefono("612345678");
+        console.log("2) Teléfono creado:", t1);
+        t1.llamar();
+        t1.llamar();
+        console.log("2) Número de llamadas tras 2 llamadas:", t1.numeroLlamadas);
+
+        // 3.- Puntos y líneas
+        // Función constructora Punto (x, y)
+        function Punto(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        // Función constructora Recta (dos puntos)
+        function Recta(p1, p2) {
+            this.p1 = p1;
+            this.p2 = p2;
+        }
+
+        const a = new Punto(0, 0);
+        const b = new Punto(3, 4);
+        const r = new Recta(a, b);
+        console.log("3) Punto A:", a);
+        console.log("3) Punto B:", b);
+        console.log("3) Recta AB:", r);
+    </script>
+</body>
+
+</html>

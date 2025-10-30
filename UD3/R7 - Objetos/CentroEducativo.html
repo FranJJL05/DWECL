@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centro Educativo</title>
+</head>
+
+<body>
+    <h1>Centro Educativo</h1>
+    <script>
+        function Alumno(id, nombre, notaMedia) {
+            this.id = id;
+            this.nombre = nombre;
+            this.notaMedia = notaMedia;
+        }
+
+        function Colegio(nombre, numeroAulas, numeroAlumnos) {
+            this.nombre = nombre;
+            this.numeroAulas = numeroAulas;
+            this.numeroAlumnos = numeroAlumnos;
+            this.alumnos = [];
+
+            for (let i = 0; i < this.numeroAlumnos; i++) {
+                const id = i;
+                const nombreAlumno = "alumno" + (i + 1);
+                const notaPorDefecto = 5.0;
+                this.alumnos.push(new Alumno(id, nombreAlumno, notaPorDefecto));
+            }
+
+            this.consultarNotaMedia = function (idAlumno) {
+                const alumno = this.alumnos.find(function (a) { return a.id === idAlumno; });
+                if (!alumno) {
+                    console.log("Alumno con id", idAlumno, "no encontrado");
+                } else {
+                    console.log("Nota media de", alumno.nombre + ":", alumno.notaMedia.toFixed(2));
+                }
+            };
+
+            this.modificarNotaMedia = function (idAlumno, nuevaNota) {
+                const alumno = this.alumnos.find(function (a) { return a.id === idAlumno; });
+                if (!alumno) {
+                    console.log("Alumno con id", idAlumno, "no encontrado");
+                } else {
+                    alumno.notaMedia = Number(nuevaNota);
+                }
+            };
+        }
+
+        // Ejemplo de uso
+        const colegio = new Colegio("IES Iliberis", 12, 3);
+        console.log("Colegio creado:", colegio);
+
+        // Consultas y modificaciones
+        colegio.consultarNotaMedia(0);
+        colegio.modificarNotaMedia(0, 7.25);
+        colegio.consultarNotaMedia(0); 
+
+        colegio.consultarNotaMedia(1);
+        colegio.modificarNotaMedia(1, 8.5);
+        colegio.consultarNotaMedia(1);
+
+        colegio.consultarNotaMedia(99);
+    </script>
+</body>
+
+</html>

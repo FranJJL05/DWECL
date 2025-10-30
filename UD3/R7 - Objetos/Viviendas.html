@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viviendas</title>
+</head>
+
+<body>
+    <h1>Viviendas</h1>
+    <script>
+        function Casa(calle, numero, codigoPostal) {
+            this.calle = calle;
+            this.numero = numero;
+            this.codigoPostal = codigoPostal;
+
+            console.log(
+                "Nueva casa en calle: " + this.calle + ", nº: " + this.numero + ", CP: " + this.codigoPostal + "."
+            );
+
+            this.setNumero = function (numero) {
+                this.numero = numero;
+            };
+
+            this.setCalle = function (calle) {
+                this.calle = calle;
+            };
+
+            this.setCodigoPostal = function (codigo) {
+                this.codigoPostal = codigo;
+            };
+
+            this.imprimeCalle = function () {
+                return this.calle;
+            };
+
+            this.imprimeNumero = function () {
+                return this.numero;
+            };
+
+            this.imprimeCodigoPostal = function () {
+                return this.codigoPostal;
+            };
+        }
+
+        // Ejemplo solicitado
+        const casaA = new Casa("Garcia Prieto", "58", "15706");
+        const casaB = new Casa("Camino Caneiro", "29", "32004");
+        const casaC = new Casa("San Clemente", "s/n", "15705");
+
+        console.log("El código postal de la casaA es:", casaA.imprimeCodigoPostal() + ".");
+        console.log("La calle de la casaC es:", casaC.imprimeCalle() + ".");
+
+        casaA.setNumero("60");
+        console.log("Número actualizado casaA:", casaA);
+    </script>
+</body>
+
+</html>
