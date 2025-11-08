@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script type="module" src="ejer7.js"></script>
+    <style>
+        body {
+            margin: 20px;
+        }
+        label {
+            display: flex;
+            margin-top: 10px;
+        }
+        input, textarea, button {
+            display: flex;
+            margin-top: 5px;
+        }
+        #ayuda {
+            color: green;
+            margin-top: 10px;   
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Contacto</h1>
+
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo">
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
+
+        <button type="submit" id="enviar">Enviar</button>
+        <button type="reset" id="resetear">Resetear</button>
+    </form>
+
+    <p id="ayuda"></p>
+</body>
+</html>
