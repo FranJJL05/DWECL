@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Ejercicio 2: Modificar Fuente y Alineación con JS</title>
+</head>
+
+<body>
+    <h1>Control de Texto con JavaScript</h1>
+    
+    <div class="controls">
+        <h3>Tamaño de Fuente</h3>
+        <button id="btn-increase">Aumentar Fuente (+)</button>
+        <button id="btn-decrease">Disminuir Fuente (-)</button>
+        <button id="btn-reset-size">Restablecer Tamaño</button>
+    </div>
+
+    <div class="controls">
+        <h3>Alineación del Texto</h3>
+        <button id="btn-align-justify">Justificar</button>
+        <button id="btn-align-left">Alinear Izquierda</button>
+    </div>
+
+    <div id="text-container">
+        <p>
+            **Párrafo 1:** En este primer párrafo, vamos a comprobar cómo se aplica la funcionalidad de **cambio de tamaño de fuente**. Al presionar los botones de "Aumentar" o "Disminuir", el tamaño del texto dentro de este contenedor cambiará dinámicamente. 
+        </p>
+        <p>
+            **Párrafo 2:** La segunda funcionalidad que probaremos es la **alineación del texto**. Los botones "Justificar" y "Alinear Izquierda" modificarán la propiedad CSS `text-align` de todo el bloque de texto.
+        </p>
+        <p>
+            **Párrafo 3:** Es importante notar que estamos siguiendo las indicaciones del ejercicio, que solicita implementar cada funcionalidad utilizando **funciones independientes**.
+        </p>
+        <p>
+            **Párrafo 4:** Este es el cuarto párrafo. La idea es que al modificar el estilo en el contenedor (`#text-container`), **todos los párrafos** hereden los cambios de tamaño y alineación automáticamente.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Fondo general */
+body {
+    background-color: #ffffcc; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Franja azul a la izquierda */
+.container-izq {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: #0099cc;
+}
+
+/* Encabezado */
+header {
+    background: #e6e6ff;
+    padding: 10px;
+    margin: 20px 90px 0 90px; 
+    font-weight: bold;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+/* Enlaces del encabezado */
+header a {
+    text-decoration: none;
+    color: #0033cc;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Contenido principal con margen para no tapar la franja */
+main {
+    padding: 20px 90px;
+}
+
+/* Párrafo especial visible solo en tema normal */
+#parrafo-oculto {
+    display: inline;
+    font-weight: bold;
+}
+
+/* Marco especial */
+#marco-especial {
+    margin-top: 20px;
+    padding-left: 1rem;
+    background: #ffff66;
+    border: 1px solid #000;
+}
