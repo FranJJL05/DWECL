@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2 class="title">username</h2>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Introduce tu nombre de usuario" onkeyup="validateUsername()" onblur="validateUsername()">
+                <hr id="input-line">
+            </div>
+
+            <div class="validation-info">
+                <p id="lowerCaseCheck" class="invalid">• 1 lower case character</p>
+                <p id="upperCaseCheck" class="invalid">• 1 uppercase character</p>
+                <p id="lengthCheck" class="invalid">• minimum 8 characters</p>
+            </div>
+
+            <button class="submit-btn" disabled>Submit</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

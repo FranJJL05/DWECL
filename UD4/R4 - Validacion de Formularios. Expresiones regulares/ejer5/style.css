@@ -1,0 +1,134 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #333; /* Fondo oscuro para resaltar la tarjeta */
+}
+
+.card-container {
+    background: linear-gradient(135deg, #1f4287, #2196f3); /* Degradado azul Material Design */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    color: #fff;
+    position: relative;
+}
+
+.card-logo {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    /* Estilo de logotipo de tarjeta */
+    background: #fff;
+    color: #1f4287;
+    padding: 3px 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    margin-top: 40px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.expiration-group, .cvv-group {
+    flex: 1;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+/* Resaltado de campos incorrectos (Requisito del Ejercicio 4/5) */
+input.invalid {
+    border: 2px solid #ff4d4d !important;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.8);
+}
+
+.error-message {
+    display: block;
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+    height: 14px;
+}
+
+.submit-btn {
+    background-color: #ff4d4d; /* Color de acción llamativo */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.submit-btn:not(:disabled):hover {
+    background-color: #e63946;
+}
+
+.submit-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Clases para detección de tarjeta */
+.visa {
+    color: #1f4287;
+}
+.mastercard {
+    color: #ff5722;
+}
+.amex {
+    color: #4caf50;
+}
+.default {
+    color: #fff;
+    background: #555;
+}

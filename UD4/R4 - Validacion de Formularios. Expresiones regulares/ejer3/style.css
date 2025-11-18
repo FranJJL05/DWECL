@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Color de fondo similar al de la imagen */
+    background-color: #ff4039; 
+}
+
+.container {
+    padding: 20px;
+}
+
+.form-box {
+    background-color: #f7a9a7; 
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.title {
+    color: #ffffff;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#username {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+}
+
+#username::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#input-line {
+    border: 0;
+    height: 1px;
+    background: #ffffff;
+    margin-top: 5px;
+}
+
+.validation-info {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.validation-info p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.validation-info p.valid {
+    /* Color para requisitos cumplidos */
+    color: #61b261; 
+}
+
+.validation-info p.invalid {
+    /* Color para requisitos no cumplidos */
+    color: #ffffff; 
+}
+
+.submit-btn {
+    background-color: #ffaaaa; /* Un color más claro para el botón */
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:not(:disabled):hover {
+    background-color: #ff4039;
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

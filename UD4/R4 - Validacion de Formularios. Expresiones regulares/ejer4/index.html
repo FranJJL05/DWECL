@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2 class="title">Sign Up</h2>
+            <form id="registrationForm" novalidate>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <input type="text" id="firstName" placeholder="Primer Nombre" required>
+                        <span class="error-message" id="errorFirstName"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="lastName" placeholder="Segundo Nombre (Opcional)">
+                        <span class="error-message" id="errorLastName"></span>
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <input type="email" id="email" placeholder="Correo Electrónico" required>
+                    <span class="error-message" id="errorEmail"></span>
+                </div>
+                
+                <div class="input-group full-width">
+                    <input type="tel" id="phone" placeholder="Teléfono (9 dígitos)" required>
+                    <span class="error-message" id="errorPhone"></span>
+                </div>
+
+                <div class="input-group full-width">
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <span class="error-message" id="errorPassword"></span>
+                </div>
+                
+                <div class="input-group full-width">
+                    <input type="password" id="confirmPassword" placeholder="Confirmar Contraseña" required>
+                    <span class="error-message" id="errorConfirmPassword"></span>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="receiveEmails">
+                    <label for="receiveEmails">Quiero recibir correos de marketing.</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Acepto la <a href="#">Política y Privacidad</a>. (*)</label>
+                    <span class="error-message" id="errorTerms"></span>
+                </div>
+
+                <button type="submit" class="submit-btn" disabled>Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
