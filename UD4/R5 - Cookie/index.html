@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación 5 - Cookies</title>
+</head>
+
+<body>
+    <h1>Relación 5 - Cookies</h1>
+    <div id="saludo-container" style="display: none;">
+        <h1 id="mensaje-saludo"></h1>
+        <button id="btn-logout">Cerrar Sesión</button>
+    </div>
+
+    <div id="preferencias-container">
+        <h2>Configuración</h2>
+        <label for="bg-color">Color de fondo:</label>
+        <input type="color" id="bg-color" value="#ffffff"><br><br>
+
+        <label for="text-color">Color de texto:</label>
+        <input type="color" id="text-color" value="#000000"><br><br>
+
+        <label for="font-size">Tamaño de letra:</label>
+        <input type="number" id="font-size" value="16" min="10" max="50"> px<br><br>
+
+        <button id="btn-guardar-pref">Guardar Preferencias</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
