@@ -1,0 +1,29 @@
+body{
+    width: 90%;
+}
+#contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+#contenedor > div{
+    border: 1px solid black;
+    padding: 10px;
+    width: 200px;
+}
+
+.producto-imagen{
+    width: 100px;
+}
+
+#mostrarCategorias{
+    margin-top: 5rem;
+    padding: 20px;
+}
+
+.detalle-imagen{
+    width: 100px;
+}
