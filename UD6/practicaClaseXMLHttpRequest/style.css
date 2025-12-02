@@ -1,0 +1,26 @@
+#contenedorDatos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.detalle-card{
+    background-color: antiquewhite;
+    box-shadow: 0px 0px 5px 0px;
+    border-radius: 1rem;
+    width: 20%;
+    height: 300px;
+    padding: 10px;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalle-imagen{
+    width: 100px;
+}

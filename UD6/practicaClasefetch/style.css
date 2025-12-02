@@ -1,0 +1,48 @@
+#contenedorDatos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.detalle-card {
+    background-color: antiquewhite;
+    box-shadow: 0px 0px 5px 0px;
+    border-radius: 1rem;
+    width: 20%;
+    height: 300px;
+    padding: 10px;
+}
+
+.container-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalle-imagen {
+    width: 100px;
+}
+
+.detalles {
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 600px;
+    background-color:brown;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    color: white;
+    white-space: pre-line;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalles img {
+    width: 200px;
+    height: 200px;
+}
