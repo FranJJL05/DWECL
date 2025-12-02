@@ -1,0 +1,41 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+#lista-articulos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.articulo-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 200px;
+    transition: transform 0.2s;
+}
+
+.articulo-card:hover {
+    transform: translateY(-5px);
+}
+
+.articulo-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.precio {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 1.2em;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Artículos</title>
+</head>
+
+<body>
+    <h1>Listado de Artículos</h1>
+    <div id="lista-articulos"></div>
+
+    <script>
+        // TODO: Reemplazar con el array de artículos proporcionado por el usuario
+        const articulos = [
+            { id: 1, nombre: "Artículo de ejemplo 1", precio: 10.00 },
+            { id: 2, nombre: "Artículo de ejemplo 2", precio: 20.50 }
+        ];
+
+        const contenedor = document.getElementById('lista-articulos');
+
+        // Función para renderizar artículos
+        articulos.forEach(articulo => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <h3>${articulo.nombre}</h3>
+                <p>Precio: ${articulo.precio}€</p>
+                <hr>
+            `;
+            contenedor.appendChild(div);
+        });
+    </script>
+</body>
+
+</html>

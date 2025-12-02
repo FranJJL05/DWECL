@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Estilos DOM</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Listado de Artículos con Estilos</h1>
+    <div id="lista-articulos"></div>
+
+    <script>
+        // TODO: Reemplazar con el array de artículos proporcionado por el usuario
+        const articulos = [
+            { id: 1, nombre: "Artículo de ejemplo 1", precio: 10.00 },
+            { id: 2, nombre: "Artículo de ejemplo 2", precio: 20.50 }
+        ];
+
+        const contenedor = document.getElementById('lista-articulos');
+
+        articulos.forEach(articulo => {
+            const div = document.createElement('div');
+            div.className = 'articulo-card'; // Clase para estilos
+
+            const titulo = document.createElement('h3');
+            titulo.textContent = articulo.nombre;
+
+            const precio = document.createElement('p');
+            precio.textContent = `Precio: ${articulo.precio}€`;
+            precio.className = 'precio';
+
+            div.appendChild(titulo);
+            div.appendChild(precio);
+
+            contenedor.appendChild(div);
+        });
+    </script>
+</body>
+
+</html>
