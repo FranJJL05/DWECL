@@ -1,0 +1,74 @@
+body {
+    background-color: #87ceeb; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white; 
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+#message {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.time-display {
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 600px;
+    margin: 0 auto;
+}
+
+/* Estado de la carta oculta */
+.card {
+    background-color: white; 
+    height: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: transparent; /* <--- CRUCIAL: EL TEXTO ES INVISIBLE */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estado volteado (revelado) */
+.card.flipped {
+    background-color: #f0f0f0; 
+    color: #4a5a2a; /* <--- CRUCIAL: EL TEXTO SE HACE VISIBLE */
+    cursor: default;
+}
+
+/* Estado emparejado (matched) */
+.card.matched {
+    background-color: #5cb85c; 
+    color: white; 
+    cursor: default;
+}
+
+/* Efecto hover */
+.card:not(.matched):not(.flipped):hover {
+    background-color: #e0e0e0;
+}

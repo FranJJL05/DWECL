@@ -1,0 +1,48 @@
+body {
+    /* Fondo naranja como el ejemplo */
+    background-color: #ff9933; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white; /* Texto blanco para contraste */
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.time-display {
+    font-size: 5em;
+    margin-bottom: 50px;
+    /* Estilo del tiempo similar a 00:00 [cite: 4] */
+}
+
+.controls button {
+    background-color: transparent;
+    border: 2px solid white; /* Borde blanco */
+    color: white;
+    padding: 15px 30px;
+    margin: 0 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}

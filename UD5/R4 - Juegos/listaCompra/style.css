@@ -1,0 +1,141 @@
+body {
+    background-color: #f1f5f8; /* Fondo gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    background: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 90vw;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #49a6e9; /* Título azul */
+}
+
+/* Formulario */
+.grocery-form {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    display: flex;
+    justify-content: center;
+}
+
+#grocery {
+    padding: 0.5rem;
+    border: none;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    background: #f1f5f8;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.submit-btn {
+    background: #a5d5f8; 
+    color: #49a6e9; 
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.submit-btn:hover {
+    background: #49a6e9;
+    color: white;
+}
+
+/* Alertas */
+.alert {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.alert.success {
+    background: #d4edda; 
+    color: #155724; 
+}
+
+.alert.danger {
+    background: #f8d7da; 
+    color: #721c24; 
+}
+
+/* Lista de ítems */
+.grocery-list {
+    margin-top: 1.5rem;
+}
+
+.grocery-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s linear;
+}
+
+.title {
+    color: #617d98;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+/* Botones de acción (Editar/Borrar) */
+.edit-btn, .delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.edit-btn {
+    color: #5cb85c; 
+}
+
+.delete-btn {
+    color: #d9534f; 
+}
+
+/* Botón Borrar Todo */
+.clear-btn {
+    background: transparent;
+    border-color: transparent;
+    color: #d9534f;
+    padding: 0.25rem 1rem;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    margin-top: 1.25rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.clear-btn:hover {
+    color: #f0ad4e;
+}
+/* Clase para mostrar/ocultar el contenedor */
+.grocery-container {
+    visibility: hidden;
+}
+.grocery-container.show-container {
+    visibility: visible;
+}
