@@ -1,11 +1,11 @@
 import React from "react";
-import GridProductos from "../components/GridProductos"
+import ContadorClase from "../components/ContadorClase";
 
 export default function Pruebas() {
   return (
     <div>
       Página de Pruebas
-      <div><GridProductos/></div>
+      <div><ContadorClase/></div>
     </div>
   );
 }
